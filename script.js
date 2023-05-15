@@ -62,9 +62,9 @@ function getPasswordOptions() {
 
 
 // Function for getting a random element from an array(all instances of arr will be replaced by an ACTUAL VALUE when we do our callback.)
-function getRandom(arr) {
-  var randIndex = Math.floor(Math.random() * arr.length);
-  var randElement = arr[randIndex];
+function getRandom(array) {
+  var randIndex = Math.floor(Math.random() * array.length);
+  var randElement = array[randIndex];
 
   return randElement;
 }
@@ -109,7 +109,26 @@ function generatePassword() {
   for (i = result.length ; i < options.length ; i++) {
     result.push(getRandom(possibleCharacters));
   }
-  
+
+  // put password random again and the first four character will not follow the order by specialcharacter,
+  // lowercaseCharacters, uppercaseCharacters and numberCharacters if we select yes for all the questions
+  // using new function to shuffle the password again to make it more safe. 
+  function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+    console.log(currentIndex)
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
+  // Used like so
+  shuffle(result);
 
 
     // Transform the result into a string and pass into writePassword
