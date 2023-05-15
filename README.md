@@ -11,6 +11,6 @@ N/A
 ## Usage
 
 see description 
-[Image text](https://github.com/CQlove/code-refactorting-js-password-generator/blob/main/assets/images/screenshot.png)
+![Image text](https://github.com/CQlove/code-refactorting-js-password-generator/blob/main/assets/images/screenshot.png)
 [Link to the code repository](https://github.com/CQlove/code-refactorting-js-password-generator)
 [Link to the deployed website](https://cqlove.github.io/code-refactoring-js-password-generator/)
